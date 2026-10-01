@@ -221,20 +221,38 @@ export const CardapioSection: React.FC<CardapioSectionProps> = ({ onAddToCart })
                     const isJustAdded = addedId === item.id;
                     return (
                       <div key={item.id} className="group border-b border-neutral-900 pb-5 last:border-0 last:pb-0">
-                        <div className="flex items-baseline justify-between gap-3 mb-1">
-                          <h4 className="text-sm font-bold text-white group-hover:text-[#f99619] transition-colors uppercase">
-                            {item.name}
-                          </h4>
-                          <span className="text-sm font-bold text-[#f99619] tabular-nums shrink-0">
-                            R$ {item.price.toFixed(2).replace('.', ',')}
-                          </span>
+                        <div className="flex gap-3.5 mb-2">
+                          {item.image && (
+                            <div className="w-16 h-16 sm:w-20 sm:h-20 shrink-0 rounded-xl bg-black/40 flex items-center justify-center p-1 relative overflow-hidden">
+                              <img
+                                src={item.image}
+                                alt={item.name}
+                                width="80"
+                                height="80"
+                                loading="lazy"
+                                decoding="async"
+                                referrerPolicy="no-referrer"
+                                className="w-full h-full object-contain filter drop-shadow-[0_4px_8px_rgba(0,0,0,0.8)] group-hover:scale-105 transition-transform duration-300"
+                              />
+                            </div>
+                          )}
+                          <div className="flex-1 min-w-0">
+                            <div className="flex items-baseline justify-between gap-3 mb-1">
+                              <h4 className="text-sm font-bold text-white group-hover:text-[#f99619] transition-colors uppercase">
+                                {item.name}
+                              </h4>
+                              <span className="text-sm font-bold text-[#f99619] tabular-nums shrink-0">
+                                R$ {item.price.toFixed(2).replace('.', ',')}
+                              </span>
+                            </div>
+                            {item.serves && (
+                              <span className="inline-block text-[9px] text-[#f99619] font-bold uppercase mb-1">
+                                {item.serves}
+                              </span>
+                            )}
+                            <p className="text-xs text-neutral-400 mb-2">{item.description}</p>
+                          </div>
                         </div>
-                        {item.serves && (
-                          <span className="inline-block text-[9px] text-[#f99619] font-bold uppercase mb-1">
-                            {item.serves}
-                          </span>
-                        )}
-                        <p className="text-xs text-neutral-400 mb-3">{item.description}</p>
                         
                         <div className="flex items-center gap-2">
                           <button
@@ -278,22 +296,40 @@ export const CardapioSection: React.FC<CardapioSectionProps> = ({ onAddToCart })
                     const isJustAdded = addedId === item.id;
                     return (
                       <div key={item.id} className="group border-b border-neutral-900 pb-5 last:border-0 last:pb-0">
-                        <div className="flex items-baseline justify-between gap-3 mb-1">
-                          <div className="flex items-center gap-2">
-                            <h4 className="text-sm font-bold text-white group-hover:text-[#f99619] transition-colors uppercase">
-                              {item.name}
-                            </h4>
-                            {item.badge && (
-                              <span className="text-[9px] font-bold uppercase px-2 py-0.5 rounded-full bg-amber-500/15 text-[#f99619] border border-[#f99619]/30">
-                                {item.badge}
+                        <div className="flex gap-3.5 mb-2">
+                          {item.image && (
+                            <div className="w-16 h-16 sm:w-20 sm:h-20 shrink-0 rounded-xl bg-black/40 flex items-center justify-center p-1 relative overflow-hidden">
+                              <img
+                                src={item.image}
+                                alt={item.name}
+                                width="80"
+                                height="80"
+                                loading="lazy"
+                                decoding="async"
+                                referrerPolicy="no-referrer"
+                                className="w-full h-full object-contain filter drop-shadow-[0_4px_8px_rgba(0,0,0,0.8)] group-hover:scale-105 transition-transform duration-300"
+                              />
+                            </div>
+                          )}
+                          <div className="flex-1 min-w-0">
+                            <div className="flex items-baseline justify-between gap-3 mb-1">
+                              <div className="flex items-center gap-2">
+                                <h4 className="text-sm font-bold text-white group-hover:text-[#f99619] transition-colors uppercase">
+                                  {item.name}
+                                </h4>
+                                {item.badge && (
+                                  <span className="text-[9px] font-bold uppercase px-2 py-0.5 rounded-full bg-amber-500/15 text-[#f99619] border border-[#f99619]/30">
+                                    {item.badge}
+                                  </span>
+                                )}
+                              </div>
+                              <span className="text-sm font-bold text-[#f99619] tabular-nums shrink-0">
+                                R$ {item.price.toFixed(2).replace('.', ',')}
                               </span>
-                            )}
+                            </div>
+                            <p className="text-xs text-neutral-400 mb-2">{item.description}</p>
                           </div>
-                          <span className="text-sm font-bold text-[#f99619] tabular-nums shrink-0">
-                            R$ {item.price.toFixed(2).replace('.', ',')}
-                          </span>
                         </div>
-                        <p className="text-xs text-neutral-400 mb-3">{item.description}</p>
                         
                         <div className="flex items-center gap-2">
                           <button

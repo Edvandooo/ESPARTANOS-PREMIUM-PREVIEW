@@ -4,6 +4,22 @@ import smashImg from '../assets/images/burger_smash_cheddar_transparent.webp';
 import bbqImg from '../assets/images/burger_bbq_bacon_transparent.webp';
 import truffleImg from '../assets/images/burger_truffle_swiss_transparent.webp';
 
+// Fotos Oficiais Reais do Cardápio Anota.ai da Espartanos Hamburgueria
+import superEspartaImg from '../assets/images/cardapio/super_esparta.webp';
+import reiDeEspartaImg from '../assets/images/cardapio/rei_de_esparta.webp';
+import espartaGoudaImg from '../assets/images/cardapio/esparta_gouda.webp';
+import espartaBrutalImg from '../assets/images/cardapio/esparta_brutal.webp';
+import espartaCatuImg from '../assets/images/cardapio/esparta_catu.webp';
+import espartaProvoImg from '../assets/images/cardapio/esparta_provo.webp';
+import espartaGorgoImg from '../assets/images/cardapio/esparta_gorgo.webp';
+import espartaPicanteImg from '../assets/images/cardapio/esparta_picante.webp';
+import espartaGuerreiroImg from '../assets/images/cardapio/esparta_guerreiro.webp';
+import batataCheddarPImg from '../assets/images/cardapio/batata_cheddar_p.webp';
+import batataCheddarGImg from '../assets/images/cardapio/batata_cheddar_g.webp';
+import onionRingsImg from '../assets/images/cardapio/onion_rings.webp';
+import comboPpImg from '../assets/images/cardapio/combo_pp.webp';
+import comboPImg from '../assets/images/cardapio/combo_p.webp';
+
 export const ESPARTANOS_INFO = {
   name: 'Espartanos Hamburgueria',
   instagramHandle: '@espartanoshamburgueria',
@@ -115,7 +131,7 @@ export const MENU_PRODUCTS: MenuItem[] = [
     price: 41.00,
     category: 'artesanais',
     badge: 'Mais Pedido',
-    image: chickenImg,
+    image: superEspartaImg,
     description: 'Pão brioche gold, 2 blends 90g, queijo gouda, queijo provolone, queijo gorgonzola, cheddar cremoso Polenghi, cebola caramelizada, bacon fatiado e maionese Espartanos.',
     ingredients: ['2 Blends 90g', 'Gouda', 'Provolone', 'Gorgonzola', 'Cheddar Polenghi', 'Bacon Fatiado', 'Cebola Caramelizada'],
   },
@@ -134,6 +150,7 @@ export const MENU_PRODUCTS: MenuItem[] = [
     price: 41.00,
     category: 'artesanais',
     badge: 'Duplo 180g',
+    image: reiDeEspartaImg,
     description: 'Pão brioche, 2 blends 180g, cheddar fatiado Polenghi, cheddar cremoso Polenghi, farofa de bacon, bacon e maionese Espartanos.',
     ingredients: ['2 Blends 180g (360g carne)', 'Cheddar Fatiado & Cremoso', 'Farofa de Bacon', 'Bacon', 'Maionese Espartanos'],
   },
@@ -143,7 +160,7 @@ export const MENU_PRODUCTS: MenuItem[] = [
     price: 38.00,
     category: 'artesanais',
     badge: 'Sucesso',
-    image: smashImg,
+    image: espartaGoudaImg,
     description: 'Pão brioche gergelim, blend 180g, queijo gouda, cheddar cremoso Polenghi, onion rings e molho barbecue.',
     ingredients: ['Blend 180g', 'Queijo Gouda', 'Cheddar Cremoso', 'Onion Rings', 'Molho Barbecue'],
   },
@@ -152,6 +169,7 @@ export const MENU_PRODUCTS: MenuItem[] = [
     name: 'Esparta Brutal',
     price: 39.00,
     category: 'artesanais',
+    image: espartaBrutalImg,
     description: 'Pão australiano, 2 blends 90g, cheddar cremoso Polenghi, farofa de bacon, cheddar fatiado Polenghi, cebola caramelizada, bacon fatiado e maionese Espartanos.',
     ingredients: ['Pão Australiano', '2 Blends 90g', 'Duplo Cheddar Polenghi', 'Farofa de Bacon', 'Bacon Fatiado'],
   },
@@ -161,6 +179,7 @@ export const MENU_PRODUCTS: MenuItem[] = [
     price: 36.00,
     category: 'artesanais',
     badge: 'Catupiry Real',
+    image: espartaCatuImg,
     description: 'Pão brioche gergelim, blend 180g, Catupiry empanado, cebola caramelizada, bacon fatiado e maionese Espartanos.',
     ingredients: ['Blend 180g', 'Catupiry Empanado', 'Cebola Caramelizada', 'Bacon Fatiado', 'Maionese da Casa'],
   },
@@ -169,6 +188,7 @@ export const MENU_PRODUCTS: MenuItem[] = [
     name: 'Esparta Provô',
     price: 36.00,
     category: 'artesanais',
+    image: espartaProvoImg,
     description: 'Pão brioche gergelim, blend 180g, provolone empanado, cheddar cremoso, bacon fatiado e maionese Espartanos.',
     ingredients: ['Blend 180g', 'Provolone Empanado Crocante', 'Cheddar Cremoso', 'Bacon Fatiado', 'Maionese Espartanos'],
   },
@@ -177,7 +197,7 @@ export const MENU_PRODUCTS: MenuItem[] = [
     name: 'Esparta Gorgô',
     price: 36.00,
     category: 'artesanais',
-    image: truffleImg,
+    image: espartaGorgoImg,
     description: 'Pão brioche gergelim, blend 180g, queijo gorgonzola, bacon em cubos e maionese Espartanos.',
     ingredients: ['Blend 180g', 'Gorgonzola Nobre', 'Bacon em Cubos', 'Maionese Espartanos'],
   },
@@ -186,7 +206,7 @@ export const MENU_PRODUCTS: MenuItem[] = [
     name: 'Esparta Picante',
     price: 36.00,
     category: 'artesanais',
-    image: bbqImg,
+    image: espartaPicanteImg,
     description: 'Pão australiano, blend 180g, queijo coalho chapeado, bacon fatiado e geleia de pimenta.',
     ingredients: ['Pão Australiano', 'Blend 180g', 'Queijo Coalho Chapeado', 'Bacon Fatiado', 'Geleia de Pimenta'],
   },
@@ -195,6 +215,7 @@ export const MENU_PRODUCTS: MenuItem[] = [
     name: 'Esparta Guerreiro',
     price: 36.00,
     category: 'artesanais',
+    image: espartaGuerreiroImg,
     description: 'Pão brioche gold, 2 blends 90g, cheddar cremoso Polenghi, farofa de bacon, cebola caramelizada, bacon fatiado e maionese Espartanos.',
     ingredients: ['2 Blends 90g', 'Cheddar Cremoso Polenghi', 'Farofa de Bacon', 'Bacon Fatiado', 'Cebola Caramelizada'],
   },
@@ -204,6 +225,7 @@ export const MENU_PRODUCTS: MenuItem[] = [
     name: 'Batata com Cheddar e Bacon — Pequena',
     price: 20.00,
     category: 'acompanhamentos',
+    image: batataCheddarPImg,
     serves: 'Serve até 2 pessoas',
     description: 'Batata palito McCain coberta com cheddar Polenghi cremoso e bacon crocante.',
   },
@@ -212,6 +234,7 @@ export const MENU_PRODUCTS: MenuItem[] = [
     name: 'Batata com Cheddar e Bacon — Grande',
     price: 32.00,
     category: 'acompanhamentos',
+    image: batataCheddarGImg,
     serves: 'Serve até 4 pessoas',
     description: 'Batata palito McCain coberta com generosa porção de cheddar Polenghi e bacon.',
   },
@@ -220,6 +243,7 @@ export const MENU_PRODUCTS: MenuItem[] = [
     name: 'Onion Rings',
     price: 15.00,
     category: 'acompanhamentos',
+    image: onionRingsImg,
     description: '10 unidades de onion rings sequinhas e crocantes acompanhadas de molho barbecue.',
   },
   // COMBOS REAIS
@@ -229,6 +253,7 @@ export const MENU_PRODUCTS: MenuItem[] = [
     price: 25.00,
     category: 'combos',
     badge: 'Individual',
+    image: comboPpImg,
     description: '1 hambúrguer artesanal + batata com bacon, calabresa e molho cheddar + 1 Guaracamp gelado.',
   },
   {
@@ -237,6 +262,7 @@ export const MENU_PRODUCTS: MenuItem[] = [
     price: 40.00,
     category: 'combos',
     badge: 'Para Dois',
+    image: comboPImg,
     description: '2 hambúrgueres artesanais + batata com bacon, calabresa e molho cheddar + 2 Guaracamp gelados.',
   },
 ];
