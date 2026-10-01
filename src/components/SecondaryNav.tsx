@@ -25,20 +25,20 @@ export const SecondaryNav: React.FC<SecondaryNavProps> = ({
       <div className="flex flex-col items-center gap-2">
         <button
           onClick={onPrev}
-          className="w-7 h-7 sm:w-8 sm:h-8 rounded-full border border-neutral-800 bg-neutral-950/85 hover:bg-neutral-900 text-neutral-400 hover:text-white flex items-center justify-center transition-all focus:outline-none focus-visible:ring-1 focus-visible:ring-amber-500 shadow-lg group cursor-pointer"
-          aria-label="Previous burger"
-          title="Previous item"
+          className="w-11 h-11 sm:w-8 sm:h-8 rounded-full border border-neutral-800 bg-neutral-950/85 hover:bg-neutral-900 text-neutral-400 hover:text-white flex items-center justify-center transition-all focus:outline-none focus-visible:ring-1 focus-visible:ring-amber-500 shadow-lg group cursor-pointer"
+          aria-label="Hambúrguer anterior"
+          title="Item anterior"
         >
-          <ChevronLeft className="w-3.5 h-3.5 sm:w-4 sm:h-4 transition-transform group-hover:-translate-x-0.5" />
+          <ChevronLeft className="w-4 h-4 sm:w-4 sm:h-4 transition-transform group-hover:-translate-x-0.5" />
         </button>
 
         <button
           onClick={onNext}
-          className="w-7 h-7 sm:w-8 sm:h-8 rounded-full border border-neutral-800 bg-neutral-950/85 hover:bg-neutral-900 text-neutral-400 hover:text-white flex items-center justify-center transition-all focus:outline-none focus-visible:ring-1 focus-visible:ring-amber-500 shadow-lg group cursor-pointer"
-          aria-label="Next burger"
-          title="Next item"
+          className="w-11 h-11 sm:w-8 sm:h-8 rounded-full border border-neutral-800 bg-neutral-950/85 hover:bg-neutral-900 text-neutral-400 hover:text-white flex items-center justify-center transition-all focus:outline-none focus-visible:ring-1 focus-visible:ring-amber-500 shadow-lg group cursor-pointer"
+          aria-label="Próximo hambúrguer"
+          title="Próximo item"
         >
-          <ChevronRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 transition-transform group-hover:translate-x-0.5" />
+          <ChevronRight className="w-4 h-4 sm:w-4 sm:h-4 transition-transform group-hover:translate-x-0.5" />
         </button>
       </div>
 
@@ -49,9 +49,9 @@ export const SecondaryNav: React.FC<SecondaryNavProps> = ({
       */}
       <button
         onClick={onSelectNext}
-        className="group relative flex flex-col items-start focus:outline-none text-left cursor-pointer"
-        aria-label={`Next: ${nextBurger.titleLine1} ${nextBurger.titleLine2}`}
-        title={`Next: ${nextBurger.titleLine1} ${nextBurger.titleLine2}`}
+        className="group relative flex flex-col items-start focus:outline-none text-left cursor-pointer min-w-[44px] min-h-[44px]"
+        aria-label={`PRÓXIMO: ${nextBurger.titleLine1} ${nextBurger.titleLine2}`}
+        title={`Próximo: ${nextBurger.titleLine1} ${nextBurger.titleLine2}`}
       >
         {/* Subtle Next Indicator Micro-Label */}
         <div className="hidden sm:flex items-center gap-1.5 mb-1 pl-1 opacity-75 group-hover:opacity-100 transition-opacity">
@@ -69,6 +69,10 @@ export const SecondaryNav: React.FC<SecondaryNavProps> = ({
           <img
             src={nextBurger.image}
             alt={nextBurger.alt}
+            width="176"
+            height="176"
+            loading="lazy"
+            decoding="async"
             referrerPolicy="no-referrer"
             className="w-full h-full object-contain filter drop-shadow-[0_15px_25px_rgba(0,0,0,0.95)] brightness-95 group-hover:brightness-110 group-hover:scale-105 transition-all duration-400 ease-out select-none pointer-events-none"
           />

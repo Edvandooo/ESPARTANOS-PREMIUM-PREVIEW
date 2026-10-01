@@ -57,7 +57,7 @@ export const MenuDrawer: React.FC<MenuDrawerProps> = ({
           </div>
           <button
             onClick={onClose}
-            className="p-2 text-neutral-400 hover:text-white rounded-full bg-neutral-900 transition-colors focus:outline-none focus-visible:ring-1 focus-visible:ring-amber-500"
+            className="w-11 h-11 min-w-[44px] min-h-[44px] flex items-center justify-center p-2 text-neutral-400 hover:text-white rounded-full bg-neutral-900 transition-colors focus:outline-none focus-visible:ring-1 focus-visible:ring-amber-500 cursor-pointer"
             aria-label="Fechar menu"
           >
             <X className="w-5 h-5" />
@@ -72,7 +72,7 @@ export const MenuDrawer: React.FC<MenuDrawerProps> = ({
               <button
                 key={link.name}
                 onClick={() => handleLinkClick(link.id, link.name)}
-                className="w-full text-left group flex items-start justify-between py-2 transition-transform duration-200 hover:translate-x-2 focus:outline-none"
+                className="w-full text-left group flex items-start justify-between min-h-[44px] py-2.5 transition-transform duration-200 hover:translate-x-2 focus:outline-none cursor-pointer"
               >
                 <div>
                   <div className="flex items-center gap-3">

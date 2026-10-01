@@ -65,15 +65,15 @@ export const ProductInfo: React.FC<ProductInfoProps> = ({ burger, onAddToCart })
         onClick={handleAdd}
         whileHover={{ scale: 1.03 }}
         whileTap={{ scale: 0.97 }}
-        className="inline-flex items-center gap-2 sm:gap-2.5 pl-3 sm:pl-4 pr-1 sm:pr-1.5 py-1 sm:py-1.5 bg-[#f99619] hover:bg-[#ff9f24] text-neutral-950 font-bold text-[8.5px] xs:text-[9px] sm:text-[11px] tracking-wider uppercase rounded-full shadow-md transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-white cursor-pointer select-none"
-        aria-label={`Adicionar ${burger.titleLine1} ${burger.titleLine2} ao carrinho`}
+        className="inline-flex items-center gap-2 sm:gap-2.5 pl-3.5 sm:pl-4 pr-1.5 sm:pr-2 min-h-[44px] py-2 sm:py-2 bg-[#f99619] hover:bg-[#ff9f24] text-neutral-950 font-bold text-[8.5px] xs:text-[9px] sm:text-[11px] tracking-wider uppercase rounded-full shadow-md transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-white cursor-pointer select-none"
+        aria-label={isAdded ? 'ADICIONADO ao carrinho' : `ADICIONAR AO CARRINHO: ${burger.titleLine1} ${burger.titleLine2}`}
       >
         <span>{isAdded ? 'ADICIONADO' : 'ADICIONAR AO CARRINHO'}</span>
-        <span className="w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-white text-neutral-900 flex items-center justify-center transition-transform">
+        <span className="w-5 h-5 sm:w-5 sm:h-5 rounded-full bg-white text-neutral-900 flex items-center justify-center transition-transform">
           {isAdded ? (
-            <Check className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-emerald-600 stroke-[3]" />
+            <Check className="w-3 h-3 text-emerald-600 stroke-[3]" />
           ) : (
-            <ChevronRight className="w-3 h-3 sm:w-3.5 sm:h-3.5 stroke-[2.5]" />
+            <ChevronRight className="w-3.5 h-3.5 stroke-[2.5]" />
           )}
         </span>
       </motion.button>

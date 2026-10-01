@@ -107,6 +107,10 @@ export const HeroDisplay: React.FC<HeroDisplayProps> = ({ currentBurger, directi
               <img
                 src={currentBurger.image}
                 alt={currentBurger.alt}
+                width="1200"
+                height="896"
+                fetchPriority="high"
+                decoding="sync"
                 referrerPolicy="no-referrer"
                 className="w-full h-auto max-h-[33vh] sm:max-h-[44vh] md:max-h-[50vh] lg:max-h-[56vh] object-contain drop-shadow-[0_25px_40px_rgba(0,0,0,0.95)] filter contrast-[1.03] brightness-[1.02]"
                 style={{

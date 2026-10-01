@@ -43,30 +43,37 @@ export const ShareModal: React.FC<ShareModalProps> = ({ isOpen, onClose, burger 
             Compartilhe <span className="font-bold text-white">{burger.titleLine1} {burger.titleLine2}</span> com seus amigos.
           </p>
 
-          <div className="flex items-center gap-2 bg-neutral-950 p-2 rounded-lg border border-neutral-800">
+          <form onSubmit={(e) => { e.preventDefault(); handleCopy(); }} className="flex items-center gap-2 bg-neutral-950 p-2 rounded-lg border border-neutral-800">
+            <label htmlFor="share-link-input" className="sr-only">
+              Link de compartilhamento do hambúrguer
+            </label>
             <input
+              id="share-link-input"
+              name="share-link"
               type="text"
               readOnly
+              aria-label="Link de compartilhamento do hambúrguer"
               value={`${currentUrl}#${burger.id}`}
-              className="bg-transparent text-xs text-neutral-400 flex-1 outline-none truncate"
+              className="bg-transparent text-xs text-neutral-400 flex-1 outline-none truncate py-2"
             />
             <button
+              type="button"
               onClick={handleCopy}
-              className="px-3 py-1.5 bg-[#f99619] hover:bg-[#ffa32b] text-neutral-950 font-bold text-[10px] tracking-wider rounded-md transition-colors flex items-center gap-1 shrink-0"
+              className="min-h-[44px] px-3.5 py-2 bg-[#f99619] hover:bg-[#ffa32b] text-neutral-950 font-bold text-[10px] tracking-wider rounded-md transition-colors flex items-center justify-center gap-1 shrink-0 cursor-pointer"
             >
               {copied ? (
                 <>
-                  <Check className="w-3 h-3" />
+                  <Check className="w-3.5 h-3.5" />
                   <span>COPIADO</span>
                 </>
               ) : (
                 <>
-                  <Copy className="w-3 h-3" />
+                  <Copy className="w-3.5 h-3.5" />
                   <span>COPIAR</span>
                 </>
               )}
             </button>
-          </div>
+          </form>
         </div>
       </div>
     </div>

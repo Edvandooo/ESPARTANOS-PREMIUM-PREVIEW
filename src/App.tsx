@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, lazy, Suspense } from 'react';
 import { BURGERS_DATA } from './data/burgers';
 import { BurgerItem, CartItem, MenuItem } from './types/burger';
 import { Header } from './components/Header';
@@ -11,11 +11,13 @@ import { HeroDisplay } from './components/HeroDisplay';
 import { ProductInfo } from './components/ProductInfo';
 import { SecondaryNav } from './components/SecondaryNav';
 import { BottomBar } from './components/BottomBar';
-import { DrinksInfiniteCarousel } from './components/DrinksInfiniteCarousel';
-import { CardapioSection } from './components/CardapioSection';
-import { CartDrawer } from './components/CartDrawer';
-import { MenuDrawer } from './components/MenuDrawer';
-import { ShareModal } from './components/ShareModal';
+
+// Code splitting for performance - Carregamento dinâmico de componentes secundários e modais
+const DrinksInfiniteCarousel = lazy(() => import('./components/DrinksInfiniteCarousel').then(m => ({ default: m.DrinksInfiniteCarousel })));
+const CardapioSection = lazy(() => import('./components/CardapioSection').then(m => ({ default: m.CardapioSection })));
+const CartDrawer = lazy(() => import('./components/CartDrawer').then(m => ({ default: m.CartDrawer })));
+const MenuDrawer = lazy(() => import('./components/MenuDrawer').then(m => ({ default: m.MenuDrawer })));
+const ShareModal = lazy(() => import('./components/ShareModal').then(m => ({ default: m.ShareModal })));
 
 export default function App() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -148,43 +150,51 @@ export default function App() {
         />
       </main>
 
-      {/* 
-        SEÇÃO INTERMEDIÁRIA: CARROSSEL INFINITO DE BEBIDAS
-        Faixa contínua com Fanta, Coca-Cola, Império Lager e Pink Moon
-        em movimento linear suave e perpétuo da direita para a esquerda
-      */}
-      <DrinksInfiniteCarousel />
+      <Suspense fallback={null}>
+        {/* 
+          SEÇÃO INTERMEDIÁRIA: CARROSSEL INFINITO DE BEBIDAS
+          Faixa contínua com Fanta, Coca-Cola, Império Lager e Pink Moon
+          em movimento linear suave e perpétuo da direita para a esquerda
+        */}
+        <DrinksInfiniteCarousel />
 
-      {/* 
-        SEÇÃO 2: CARDÁPIO VITRINE ESPARTANOS
-        Inspirada na referência: estruturada, rica, com produtos, acompanhamentos e combos reais
-      */}
-      <CardapioSection onAddToCart={handleAddToCart} />
+        {/* 
+          SEÇÃO 2: CARDÁPIO VITRINE ESPARTANOS
+          Inspirada na referência: estruturada, rica, com produtos, acompanhamentos e combos reais
+        */}
+        <CardapioSection onAddToCart={handleAddToCart} />
 
-      {/* Cart Slide-Over Drawer */}
-      <CartDrawer
-        isOpen={isCartOpen}
-        onClose={() => setIsCartOpen(false)}
-        items={cart}
-        onUpdateQuantity={handleUpdateQuantity}
-        onRemoveItem={handleRemoveFromCart}
-        onClearCart={handleClearCart}
-      />
+        {/* Cart Slide-Over Drawer */}
+        {isCartOpen && (
+          <CartDrawer
+            isOpen={isCartOpen}
+            onClose={() => setIsCartOpen(false)}
+            items={cart}
+            onUpdateQuantity={handleUpdateQuantity}
+            onRemoveItem={handleRemoveFromCart}
+            onClearCart={handleClearCart}
+          />
+        )}
 
-      {/* Editorial Menu Drawer */}
-      <MenuDrawer
-        isOpen={isMenuOpen}
-        onClose={() => setIsMenuOpen(false)}
-        activeTab={activeTab}
-        onSelectTab={setActiveTab}
-      />
+        {/* Editorial Menu Drawer */}
+        {isMenuOpen && (
+          <MenuDrawer
+            isOpen={isMenuOpen}
+            onClose={() => setIsMenuOpen(false)}
+            activeTab={activeTab}
+            onSelectTab={setActiveTab}
+          />
+        )}
 
-      {/* Share Modal */}
-      <ShareModal
-        isOpen={isShareOpen}
-        onClose={() => setIsShareOpen(false)}
-        burger={currentBurger}
-      />
+        {/* Share Modal */}
+        {isShareOpen && (
+          <ShareModal
+            isOpen={isShareOpen}
+            onClose={() => setIsShareOpen(false)}
+            burger={currentBurger}
+          />
+        )}
+      </Suspense>
     </div>
   );
 }

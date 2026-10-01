@@ -46,7 +46,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
           </div>
           <button
             onClick={onClose}
-            className="p-1.5 text-neutral-400 hover:text-white rounded-lg transition-colors focus:outline-none focus-visible:ring-1 focus-visible:ring-amber-500"
+            className="w-11 h-11 min-w-[44px] min-h-[44px] flex items-center justify-center text-neutral-400 hover:text-white rounded-lg transition-colors focus:outline-none focus-visible:ring-1 focus-visible:ring-amber-500 cursor-pointer"
             aria-label="Fechar carrinho"
           >
             <X className="w-5 h-5" />
@@ -64,7 +64,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
               </p>
               <button
                 onClick={onClose}
-                className="mt-5 px-4 py-2 rounded-full border border-neutral-700 text-xs font-semibold text-neutral-300 hover:text-white hover:border-[#f99619] transition-colors"
+                className="mt-5 px-5 py-2.5 min-h-[44px] rounded-full border border-neutral-700 text-xs font-semibold text-neutral-300 hover:text-white hover:border-[#f99619] transition-colors cursor-pointer"
               >
                 Ver cardápio
               </button>
@@ -85,6 +85,10 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
                     <img
                       src={itemImage}
                       alt={itemName}
+                      width="64"
+                      height="64"
+                      loading="lazy"
+                      decoding="async"
                       referrerPolicy="no-referrer"
                       className="w-16 h-16 object-contain rounded-lg bg-black/40 p-1 shrink-0"
                     />
@@ -105,20 +109,20 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
                     <div className="flex items-center gap-2 mt-2">
                       <button
                         onClick={() => onUpdateQuantity(item.burger.id, -1)}
-                        className="w-6 h-6 rounded-md bg-neutral-800 hover:bg-neutral-700 text-neutral-300 flex items-center justify-center transition-colors"
+                        className="w-8 h-8 rounded-md bg-neutral-800 hover:bg-neutral-700 text-neutral-300 flex items-center justify-center transition-colors cursor-pointer"
                         aria-label="Diminuir quantidade"
                       >
-                        <Minus className="w-3 h-3" />
+                        <Minus className="w-3.5 h-3.5" />
                       </button>
                       <span className="text-xs font-semibold text-white px-1.5 tabular-nums">
                         {item.quantity}
                       </span>
                       <button
                         onClick={() => onUpdateQuantity(item.burger.id, 1)}
-                        className="w-6 h-6 rounded-md bg-neutral-800 hover:bg-neutral-700 text-neutral-300 flex items-center justify-center transition-colors"
+                        className="w-8 h-8 rounded-md bg-neutral-800 hover:bg-neutral-700 text-neutral-300 flex items-center justify-center transition-colors cursor-pointer"
                         aria-label="Aumentar quantidade"
                       >
-                        <Plus className="w-3 h-3" />
+                        <Plus className="w-3.5 h-3.5" />
                       </button>
                     </div>
                   </div>
@@ -126,11 +130,11 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
                   <div className="flex flex-col items-end justify-between self-stretch shrink-0">
                     <button
                       onClick={() => onRemoveItem(item.burger.id)}
-                      className="text-neutral-500 hover:text-red-400 p-1 transition-colors"
+                      className="w-10 h-10 min-w-[40px] min-h-[40px] flex items-center justify-center text-neutral-500 hover:text-red-400 p-2 transition-colors cursor-pointer"
                       aria-label="Remover item"
                       title="Remover"
                     >
-                      <Trash2 className="w-3.5 h-3.5" />
+                      <Trash2 className="w-4 h-4" />
                     </button>
                     <span className="text-xs sm:text-sm font-bold text-[#f99619] tabular-nums">
                       R$ {(item.burger.price * item.quantity).toFixed(2).replace('.', ',')}
@@ -167,7 +171,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
             <div className="space-y-2 pt-1">
               <button
                 onClick={handleCheckout}
-                className="w-full py-3 bg-[#f99619] hover:bg-[#ff9f24] text-neutral-950 font-bold text-xs tracking-wider uppercase rounded-xl flex items-center justify-center gap-2 transition-all shadow-lg hover:scale-[1.01]"
+                className="w-full min-h-[48px] py-3.5 bg-[#f99619] hover:bg-[#ff9f24] text-neutral-950 font-bold text-xs tracking-wider uppercase rounded-xl flex items-center justify-center gap-2 transition-all shadow-lg hover:scale-[1.01] cursor-pointer"
               >
                 <span>FINALIZAR NO ANOTA.AI</span>
                 <ExternalLink className="w-4 h-4" />
@@ -175,7 +179,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
 
               <button
                 onClick={onClearCart}
-                className="w-full py-2 text-neutral-500 hover:text-neutral-300 text-[11px] font-medium text-center transition-colors"
+                className="w-full min-h-[44px] py-2.5 text-neutral-500 hover:text-neutral-300 text-[11px] font-medium text-center transition-colors flex items-center justify-center cursor-pointer"
               >
                 Limpar carrinho
               </button>

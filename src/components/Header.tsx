@@ -53,7 +53,7 @@ export const Header: React.FC<HeaderProps> = ({
           setActiveTab('INÍCIO');
           window.scrollTo({ top: 0, behavior: 'smooth' });
         }}
-        className="flex items-center gap-3 group text-left focus:outline-none focus-visible:ring-1 focus-visible:ring-amber-500 py-1"
+        className="flex items-center gap-3 group text-left focus:outline-none focus-visible:ring-1 focus-visible:ring-amber-500 py-1 min-h-[44px] cursor-pointer"
         aria-label="Espartanos Hamburgueria Artesanal Premium Início"
       >
         <EspartanosLogo className="h-16 sm:h-22 md:h-28 lg:h-32 w-auto transition-transform duration-300 group-hover:scale-105" />
@@ -67,13 +67,13 @@ export const Header: React.FC<HeaderProps> = ({
             <button
               key={item.id}
               onClick={() => handleNavClick(item)}
-              className={`text-[10px] lg:text-[11px] font-semibold tracking-[0.22em] uppercase transition-colors relative py-1 focus:outline-none focus-visible:ring-1 focus-visible:ring-amber-500 ${
+              className={`text-[10px] lg:text-[11px] font-semibold tracking-[0.22em] uppercase transition-colors relative py-2.5 min-h-[44px] flex items-center justify-center focus:outline-none focus-visible:ring-1 focus-visible:ring-amber-500 cursor-pointer ${
                 isActive ? 'text-white' : 'text-neutral-400 hover:text-white'
               }`}
             >
               {item.label}
               {isActive && (
-                <span className="absolute bottom-0 left-0 right-0 h-[1.5px] bg-[#f99619] rounded-full" />
+                <span className="absolute bottom-1 left-0 right-0 h-[1.5px] bg-[#f99619] rounded-full" />
               )}
             </button>
           );
@@ -87,7 +87,7 @@ export const Header: React.FC<HeaderProps> = ({
           href="https://pedido.anota.ai/loja/espartanos-hamburgueria?f=msa"
           target="_blank"
           rel="noopener noreferrer"
-          className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#f99619] hover:bg-[#ff9f24] text-black font-bold text-[9px] sm:text-[10px] tracking-wider uppercase transition-all shadow-md hover:scale-105"
+          className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 min-h-[36px] rounded-full bg-[#f99619] hover:bg-[#ff9f24] text-black font-bold text-[9px] sm:text-[10px] tracking-wider uppercase transition-all shadow-md hover:scale-105"
         >
           <span>PEDIR AGORA</span>
         </a>
@@ -95,7 +95,7 @@ export const Header: React.FC<HeaderProps> = ({
         {/* Carrinho Trigger - Botão ampliado e com touch target ergonômico no mobile */}
         <button
           onClick={onOpenCart}
-          className="relative w-10 h-10 sm:w-auto sm:h-auto p-2 sm:p-1.5 text-neutral-300 hover:text-white transition-colors focus:outline-none flex items-center justify-center rounded-full bg-neutral-900/70 sm:bg-transparent border border-neutral-800/80 sm:border-0 cursor-pointer shadow-sm"
+          className="relative w-11 h-11 sm:w-auto sm:h-auto min-w-[44px] min-h-[44px] sm:min-w-0 sm:min-h-0 p-2 sm:p-1.5 text-neutral-300 hover:text-white transition-colors focus:outline-none flex items-center justify-center rounded-full bg-neutral-900/70 sm:bg-transparent border border-neutral-800/80 sm:border-0 cursor-pointer shadow-sm"
           title="Ver Carrinho"
           aria-label={`Carrinho com ${cartCount} itens`}
         >
@@ -108,11 +108,11 @@ export const Header: React.FC<HeaderProps> = ({
         </button>
 
         {/* Controles de Menu e Compartilhar - Alinhamento horizontal confortável no mobile com touch targets generosos, e stack vertical original no PC */}
-        <div className="flex flex-row sm:flex-col items-center gap-1.5 sm:gap-2">
+        <div className="flex flex-row sm:flex-col items-center gap-2 sm:gap-2">
           {/* Compartilhar */}
           <button
             onClick={onShare}
-            className="w-10 h-10 sm:w-auto sm:h-auto p-2 sm:p-1 text-neutral-400 hover:text-white transition-colors focus:outline-none focus-visible:ring-1 focus-visible:ring-amber-500 flex items-center justify-center rounded-full bg-neutral-900/70 sm:bg-transparent border border-neutral-800/80 sm:border-0 cursor-pointer shadow-sm"
+            className="w-11 h-11 sm:w-auto sm:h-auto min-w-[44px] min-h-[44px] sm:min-w-0 sm:min-h-0 p-2 sm:p-1 text-neutral-400 hover:text-white transition-colors focus:outline-none focus-visible:ring-1 focus-visible:ring-amber-500 flex items-center justify-center rounded-full bg-neutral-900/70 sm:bg-transparent border border-neutral-800/80 sm:border-0 cursor-pointer shadow-sm"
             title="Compartilhar hambúrguer"
             aria-label="Compartilhar hambúrguer"
           >
@@ -122,7 +122,7 @@ export const Header: React.FC<HeaderProps> = ({
           {/* Menu Drawer Trigger */}
           <button
             onClick={onOpenMenu}
-            className="w-10 h-10 sm:w-auto sm:h-auto p-2 sm:p-1 flex flex-col justify-center items-center sm:items-end gap-1.5 sm:gap-1 text-white hover:text-amber-400 transition-colors focus:outline-none focus-visible:ring-1 focus-visible:ring-amber-500 rounded-full bg-neutral-900/70 sm:bg-transparent border border-neutral-800/80 sm:border-0 cursor-pointer shadow-sm"
+            className="w-11 h-11 sm:w-auto sm:h-auto min-w-[44px] min-h-[44px] sm:min-w-0 sm:min-h-0 p-2 sm:p-1 flex flex-col justify-center items-center sm:items-end gap-1.5 sm:gap-1 text-white hover:text-amber-400 transition-colors focus:outline-none focus-visible:ring-1 focus-visible:ring-amber-500 rounded-full bg-neutral-900/70 sm:bg-transparent border border-neutral-800/80 sm:border-0 cursor-pointer shadow-sm"
             aria-label="Abrir menu de navegação"
             title="Menu"
           >

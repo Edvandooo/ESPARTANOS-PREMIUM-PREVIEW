@@ -59,7 +59,7 @@ export const CardapioSection: React.FC<CardapioSectionProps> = ({ onAddToCart })
               <button
                 key={cat.id}
                 onClick={() => setActiveCategory(cat.id as any)}
-                className={`px-4 py-2 rounded-full text-[10px] sm:text-[11px] font-bold tracking-wider uppercase transition-all focus:outline-none ${
+                className={`px-4 py-2.5 min-h-[44px] rounded-full text-[10px] sm:text-[11px] font-bold tracking-wider uppercase transition-all focus:outline-none cursor-pointer ${
                   activeCategory === cat.id
                     ? 'bg-[#f99619] text-black shadow-lg shadow-amber-500/20 scale-105'
                     : 'bg-neutral-900/80 text-neutral-400 hover:text-white border border-neutral-800/80 hover:border-neutral-700'
@@ -112,6 +112,10 @@ export const CardapioSection: React.FC<CardapioSectionProps> = ({ onAddToCart })
                             <img
                               src={item.image}
                               alt={item.name}
+                              width="96"
+                              height="96"
+                              loading="lazy"
+                              decoding="async"
                               referrerPolicy="no-referrer"
                               className="w-full h-full object-contain filter drop-shadow-[0_4px_8px_rgba(0,0,0,0.8)] group-hover:scale-110 transition-transform duration-300"
                             />
@@ -164,17 +168,17 @@ export const CardapioSection: React.FC<CardapioSectionProps> = ({ onAddToCart })
                         <div className="flex items-center gap-2">
                           <button
                             onClick={() => handleAdd(item)}
-                            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-neutral-800 hover:bg-neutral-700 text-white font-bold text-[10px] tracking-wider uppercase transition-colors"
-                            aria-label={`Adicionar ${item.name} ao carrinho`}
+                            className="inline-flex items-center justify-center gap-1.5 px-3.5 py-2 min-h-[44px] rounded-full bg-neutral-800 hover:bg-neutral-700 text-white font-bold text-[10px] tracking-wider uppercase transition-colors cursor-pointer"
+                            aria-label={isJustAdded ? `Adicionado: ${item.name}` : `Adicionar: ${item.name}`}
                           >
                             {isJustAdded ? (
                               <>
-                                <Check className="w-3 h-3 text-emerald-400" />
+                                <Check className="w-3.5 h-3.5 text-emerald-400" />
                                 <span>Adicionado</span>
                               </>
                             ) : (
                               <>
-                                <Plus className="w-3 h-3 text-[#f99619]" />
+                                <Plus className="w-3.5 h-3.5 text-[#f99619]" />
                                 <span>Adicionar</span>
                               </>
                             )}
@@ -184,10 +188,10 @@ export const CardapioSection: React.FC<CardapioSectionProps> = ({ onAddToCart })
                             href={ESPARTANOS_INFO.orderUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-[#f99619] hover:bg-[#ff9f24] text-black font-bold text-[10px] tracking-wider uppercase transition-all shadow-sm"
+                            className="inline-flex items-center justify-center gap-1 px-3.5 py-2 min-h-[44px] rounded-full bg-[#f99619] hover:bg-[#ff9f24] text-black font-bold text-[10px] tracking-wider uppercase transition-all shadow-sm"
                           >
                             <span>Pedir</span>
-                            <ExternalLink className="w-3 h-3" />
+                            <ExternalLink className="w-3.5 h-3.5" />
                           </a>
                         </div>
                       </div>
@@ -235,19 +239,20 @@ export const CardapioSection: React.FC<CardapioSectionProps> = ({ onAddToCart })
                         <div className="flex items-center gap-2">
                           <button
                             onClick={() => handleAdd(item)}
-                            className="px-3 py-1 rounded-full bg-neutral-800 hover:bg-neutral-700 text-white font-bold text-[9px] uppercase tracking-wider transition-colors inline-flex items-center gap-1"
+                            className="px-3.5 py-2 min-h-[44px] rounded-full bg-neutral-800 hover:bg-neutral-700 text-white font-bold text-[9px] uppercase tracking-wider transition-colors inline-flex items-center justify-center gap-1 cursor-pointer"
+                            aria-label={isJustAdded ? `Adicionado: ${item.name}` : `Adicionar ao carrinho: ${item.name}`}
                           >
-                            {isJustAdded ? <Check className="w-2.5 h-2.5 text-emerald-400" /> : <Plus className="w-2.5 h-2.5 text-[#f99619]" />}
+                            {isJustAdded ? <Check className="w-3 h-3 text-emerald-400" /> : <Plus className="w-3 h-3 text-[#f99619]" />}
                             <span>{isJustAdded ? 'Adicionado' : 'Adicionar ao carrinho'}</span>
                           </button>
                           <a
                             href={ESPARTANOS_INFO.orderUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-[9px] font-bold text-neutral-400 hover:text-white uppercase tracking-wider inline-flex items-center gap-0.5"
+                            className="min-h-[44px] px-2 text-[9px] font-bold text-neutral-400 hover:text-white uppercase tracking-wider inline-flex items-center justify-center gap-1"
                           >
                             <span>Pedir no Anota.ai</span>
-                            <ExternalLink className="w-2.5 h-2.5" />
+                            <ExternalLink className="w-3 h-3" />
                           </a>
                         </div>
                       </div>
@@ -293,19 +298,20 @@ export const CardapioSection: React.FC<CardapioSectionProps> = ({ onAddToCart })
                         <div className="flex items-center gap-2">
                           <button
                             onClick={() => handleAdd(item)}
-                            className="px-3 py-1 rounded-full bg-neutral-800 hover:bg-neutral-700 text-white font-bold text-[9px] uppercase tracking-wider transition-colors inline-flex items-center gap-1"
+                            className="px-3.5 py-2 min-h-[44px] rounded-full bg-neutral-800 hover:bg-neutral-700 text-white font-bold text-[9px] uppercase tracking-wider transition-colors inline-flex items-center justify-center gap-1 cursor-pointer"
+                            aria-label={isJustAdded ? `Adicionado: ${item.name}` : `Adicionar ao carrinho: ${item.name}`}
                           >
-                            {isJustAdded ? <Check className="w-2.5 h-2.5 text-emerald-400" /> : <Plus className="w-2.5 h-2.5 text-[#f99619]" />}
+                            {isJustAdded ? <Check className="w-3 h-3 text-emerald-400" /> : <Plus className="w-3 h-3 text-[#f99619]" />}
                             <span>{isJustAdded ? 'Adicionado' : 'Adicionar ao carrinho'}</span>
                           </button>
                           <a
                             href={ESPARTANOS_INFO.orderUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-[9px] font-bold text-neutral-400 hover:text-white uppercase tracking-wider inline-flex items-center gap-0.5"
+                            className="min-h-[44px] px-2 text-[9px] font-bold text-neutral-400 hover:text-white uppercase tracking-wider inline-flex items-center justify-center gap-1"
                           >
                             <span>Pedir no Anota.ai</span>
-                            <ExternalLink className="w-2.5 h-2.5" />
+                            <ExternalLink className="w-3 h-3" />
                           </a>
                         </div>
                       </div>
@@ -333,6 +339,10 @@ export const CardapioSection: React.FC<CardapioSectionProps> = ({ onAddToCart })
                         <img
                           src={item.image}
                           alt={item.name}
+                          width="144"
+                          height="144"
+                          loading="lazy"
+                          decoding="async"
                           referrerPolicy="no-referrer"
                           className="w-full h-full object-contain filter drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)]"
                         />
@@ -355,19 +365,20 @@ export const CardapioSection: React.FC<CardapioSectionProps> = ({ onAddToCart })
                   <div className="flex items-center justify-between gap-2 pt-4 border-t border-neutral-900">
                     <button
                       onClick={() => handleAdd(item)}
-                      className="px-3 py-1.5 rounded-full bg-neutral-800 hover:bg-neutral-700 text-white font-bold text-[10px] uppercase tracking-wider transition-colors inline-flex items-center gap-1"
+                      className="px-3.5 py-2 min-h-[44px] rounded-full bg-neutral-800 hover:bg-neutral-700 text-white font-bold text-[10px] uppercase tracking-wider transition-colors inline-flex items-center justify-center gap-1 cursor-pointer"
+                      aria-label={isJustAdded ? `Adicionado: ${item.name}` : `Adicionar: ${item.name}`}
                     >
-                      {isJustAdded ? <Check className="w-3 h-3 text-emerald-400" /> : <Plus className="w-3 h-3 text-[#f99619]" />}
+                      {isJustAdded ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Plus className="w-3.5 h-3.5 text-[#f99619]" />}
                       <span>{isJustAdded ? 'Adicionado' : 'Adicionar'}</span>
                     </button>
                     <a
                       href={ESPARTANOS_INFO.orderUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-4 py-1.5 rounded-full bg-[#f99619] hover:bg-[#ff9f24] text-black font-bold text-[10px] uppercase tracking-wider transition-all inline-flex items-center gap-1"
+                      className="px-4 py-2 min-h-[44px] rounded-full bg-[#f99619] hover:bg-[#ff9f24] text-black font-bold text-[10px] uppercase tracking-wider transition-all inline-flex items-center justify-center gap-1"
                     >
                       <span>Pedir</span>
-                      <ExternalLink className="w-3 h-3" />
+                      <ExternalLink className="w-3.5 h-3.5" />
                     </a>
                   </div>
                 </div>

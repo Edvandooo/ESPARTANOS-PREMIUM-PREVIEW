@@ -57,7 +57,7 @@ export const SmokeVideo: React.FC = () => {
         loop
         muted
         playsInline
-        preload="auto"
+        preload="metadata"
         className="w-full h-full object-cover object-top opacity-45 mix-blend-screen filter contrast-120 brightness-110 pointer-events-none select-none"
         style={{
           mixBlendMode: 'screen',

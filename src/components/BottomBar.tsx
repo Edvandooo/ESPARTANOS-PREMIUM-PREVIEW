@@ -31,7 +31,7 @@ export const BottomBar: React.FC<BottomBarProps> = ({
               role="tab"
               aria-selected={isActive}
               onClick={() => onSelectIndex(idx)}
-              className="w-9 h-9 sm:w-auto sm:h-auto p-0 sm:p-1 flex items-center justify-center transition-all duration-300 focus:outline-none focus-visible:ring-1 focus-visible:ring-amber-500 cursor-pointer"
+              className="w-11 h-11 sm:w-auto sm:h-auto min-w-[44px] min-h-[44px] sm:min-w-0 sm:min-h-0 p-0 sm:p-1 flex items-center justify-center transition-all duration-300 focus:outline-none focus-visible:ring-1 focus-visible:ring-amber-500 cursor-pointer"
               aria-label={`Hambúrguer ${idx + 1}`}
             >
               {isActive ? (
@@ -47,7 +47,7 @@ export const BottomBar: React.FC<BottomBarProps> = ({
       {/* Micro scroll indicator */}
       <button
         onClick={() => document.getElementById('cardapio-section')?.scrollIntoView({ behavior: 'smooth' })}
-        className="flex items-center gap-1.5 text-[8px] sm:text-[9px] tracking-[0.25em] text-neutral-500 hover:text-[#f99619] uppercase transition-colors pt-0.5 cursor-pointer"
+        className="flex items-center gap-1.5 text-[8px] sm:text-[9px] tracking-[0.25em] text-neutral-500 hover:text-[#f99619] uppercase transition-colors min-h-[44px] px-2 py-1 cursor-pointer"
       >
         <span>Cardápio Completo</span>
         <span className="animate-bounce">↓</span>

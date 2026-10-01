@@ -1,15 +1,14 @@
 import React from 'react';
-import fantaImg from '../assets/images/drink_fanta.jpg';
-import cocaImg from '../assets/images/drink_coca.jpg';
-import imperioImg from '../assets/images/drink_imperio.jpg';
-import pinkMoonImg from '../assets/images/drink_pink_moon.jpg';
+import fantaImg from '../assets/images/drink_fanta.webp';
+import cocaImg from '../assets/images/drink_coca.webp';
+import imperioImg from '../assets/images/drink_imperio.webp';
+import pinkMoonImg from '../assets/images/drink_pink_moon.webp';
 
 interface DrinkItem {
   id: string;
   name: string;
   brand: string;
   image: string;
-  fallbackImage: string;
   alt: string;
 }
 
@@ -18,32 +17,28 @@ const DRINKS: DrinkItem[] = [
     id: 'fanta',
     name: 'Fanta Laranja',
     brand: 'Fanta',
-    image: '/fanta_laranja.png',
-    fallbackImage: fantaImg,
+    image: fantaImg,
     alt: 'Fanta Laranja Original 1.5L com fatias de laranja e gelo',
   },
   {
     id: 'coca-cola',
     name: 'Coca-Cola Original',
     brand: 'Coca-Cola',
-    image: '/coca_cola.png',
-    fallbackImage: cocaImg,
+    image: cocaImg,
     alt: 'Coca-Cola Sabor Original estupidamente gelada com gelo',
   },
   {
     id: 'imperio',
     name: 'Cerveja Império Lager',
     brand: 'Império Puro Malte',
-    image: '/imperio_lager.png',
-    fallbackImage: imperioImg,
+    image: imperioImg,
     alt: 'Cerveja Império Puro Malte Lager 600ml gelada com lúpulo',
   },
   {
     id: 'pink-moon',
     name: 'Pink Moon Red Draft',
     brand: 'Pink Moon Chopp',
-    image: '/pink_moon.png',
-    fallbackImage: pinkMoonImg,
+    image: pinkMoonImg,
     alt: 'Pink Moon Red Draft Chopp 600ml com frutas vermelhas e gelo',
   },
 ];
@@ -89,16 +84,13 @@ export const DrinksInfiniteCarousel: React.FC = () => {
               >
                 <img
                   src={drink.image}
-                  onError={(e) => {
-                    const target = e.currentTarget;
-                    if (target.src !== drink.fallbackImage) {
-                      target.src = drink.fallbackImage;
-                    }
-                  }}
                   alt={drink.alt}
+                  width="580"
+                  height="326"
                   referrerPolicy="no-referrer"
                   className="w-full h-full object-cover select-none pointer-events-none transition-transform duration-700 ease-out group-hover:scale-[1.02]"
                   loading="lazy"
+                  decoding="async"
                 />
               </div>
             ))}
@@ -113,16 +105,13 @@ export const DrinksInfiniteCarousel: React.FC = () => {
               >
                 <img
                   src={drink.image}
-                  onError={(e) => {
-                    const target = e.currentTarget;
-                    if (target.src !== drink.fallbackImage) {
-                      target.src = drink.fallbackImage;
-                    }
-                  }}
                   alt={drink.alt}
+                  width="580"
+                  height="326"
                   referrerPolicy="no-referrer"
                   className="w-full h-full object-cover select-none pointer-events-none transition-transform duration-700 ease-out group-hover:scale-[1.02]"
                   loading="lazy"
+                  decoding="async"
                 />
               </div>
             ))}

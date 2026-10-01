@@ -1,8 +1,8 @@
 import { BurgerItem, MenuItem } from '../types/burger';
-import chickenImg from '../assets/images/hero_chicken_fries_transparent.png';
-import smashImg from '../assets/images/burger_smash_cheddar_transparent.png';
-import bbqImg from '../assets/images/burger_bbq_bacon_transparent.png';
-import truffleImg from '../assets/images/burger_truffle_swiss_transparent.png';
+import chickenImg from '../assets/images/hero_chicken_fries_transparent.webp';
+import smashImg from '../assets/images/burger_smash_cheddar_transparent.webp';
+import bbqImg from '../assets/images/burger_bbq_bacon_transparent.webp';
+import truffleImg from '../assets/images/burger_truffle_swiss_transparent.webp';
 
 export const ESPARTANOS_INFO = {
   name: 'Espartanos Hamburgueria',
